@@ -52,6 +52,6 @@ describe("Calculator", () => {
 
   // Test case: Order of operations
   it("should return the correct difference of two numbers", () => {
-    expect(calc(5, "-", 10001,"*",5)).toBe(25);
+    expect(calc(5, "-", 10001, "*", 5)).toBe(25);
   });
 });
