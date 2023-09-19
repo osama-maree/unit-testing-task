@@ -2,6 +2,16 @@ const calc = (...arg) => {
   if (arg.length < 3 || !(arg.length % 2)) {
     throw new Error("Invalid number of inputs");
   }
+  // Ignore vale more than 1000
+    for (let i = 0; i < arg.length; i += 2) {
+      if (arg[i] > 1000 && i == 0) {
+        arg.splice(i, 2);
+        i -= 2;
+      } else if (arg[i] > 1000) {
+        arg.splice(i - 1, 2);
+        i -= 2;
+      }
+    }
   const equ = [];
   for (let i = 1; i < arg.length; i += 2) {
     if (arg[i] !== "-" && arg[i] !== "+" && arg[i] !== "*" && arg[i] !== "/") {
